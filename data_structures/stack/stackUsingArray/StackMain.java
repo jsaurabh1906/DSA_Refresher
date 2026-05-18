@@ -13,5 +13,25 @@ public class StackMain {
 
         stack.display();
 
+        stack.pop();
+
+        stack.display();
+
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop(); // This will cause stack underflow
+
+        stack.push(40);
+        stack.push(50);
+        stack.push(60);
+        System.out.println("Top Element: " + stack.peek());
+
+        System.out.println("Popped: " + stack.pop());
+
+        stack.display();
+
+        System.out.println("Stack Size: " + stack.size());
     }
 }

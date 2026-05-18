@@ -43,6 +43,37 @@ public class StackArray {
             System.out.println(arr[i]);
         }
     }
+
+    // pop method - removes and returns the top element from the stack
+    public int pop() {
+        // Check if stack is empty before popping
+        if (isEmpty()) {
+            System.out.println("Stack Underflow");
+            return -1; // Return -1 to indicate stack is empty
+        }
+
+        int value = arr[top]; // Get the value at the top
+        top--; // Move top pointer down
+        System.out.println(value + ":- popped from stack");
+        return value; // Return the popped value
+    }
+
+    // Peek operation - returns the top element without removing it
+    public int peek() {
+        // Check if stack is empty before peeking
+        if (isEmpty()) {
+            System.out.println("Stack is empty");
+            return -1; // Return -1 to indicate stack is empty
+        }
+
+        return arr[top]; // Return the value at top without modifying top
+    }
+
+    // Size operation - returns the total number of elements currently in the stack
+    public int size() {
+        return top + 1; // Since top is 0-indexed, size is top + 1
+    }
+
 }
 
 // Idea: This class implements a stack using a fixed-size array.
@@ -52,7 +83,10 @@ public class StackArray {
 //
 // Key operations:
 // - push: add a value to the top of the stack
+// - pop: remove and return the top element
+// - peek: view the top element without removing it
 // - isEmpty: check if the stack contains no elements
+// - size: get the current number of elements in the stack
 // - display: print stack contents from top to bottom
 //
 // How this implementation works:
@@ -61,17 +95,22 @@ public class StackArray {
 // 3. On push, `top` is incremented and the value is stored at `arr[top]`.
 // 4. If `top` reaches `capacity - 1`, the stack is full and further pushes
 // overflow.
-// 5. `display` prints values from the current top down to index 0.
+// 5. On pop, the value at `arr[top]` is returned and `top` is decremented.
+// 6. `display` prints values from the current top down to index 0.
 //
 // Time Complexity:
 // - push: O(1)
+// - pop: O(1)
+// - peek: O(1)
 // - isEmpty: O(1)
+// - size: O(1)
 // - display: O(n) where n is the number of elements in the stack
 //
 // Space Complexity:
 // - O(n) where n is the stack capacity
 // - The stack uses a fixed-size array and constant extra space for variables
 //
-// Note: This version does not include pop or peek methods, but those can be
-// added
-// easily using the `top` index to remove or inspect the current top element.
+// Note: This version handles stack underflow by returning -1 when attempting to
+// pop
+// or peek from an empty stack. Overflow is handled by preventing pushes when
+// full.
