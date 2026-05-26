@@ -29,6 +29,32 @@ public class LinkedList {
         current.next = newNode;
     }
 
+    public void insertAtPosition(int position, int data) {
+        Node newNode = new Node(data);
+
+        if (position == 0) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        Node current = head;
+        int currentPosition = 0;
+
+        while (current != null && currentPosition < position - 1) {
+            current = current.next;
+            currentPosition++;
+        }
+
+        if (current == null) {
+            System.out.println("Position out of bounds");
+            return;
+        }
+
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+
     public void display() {
 
         Node current = head;
