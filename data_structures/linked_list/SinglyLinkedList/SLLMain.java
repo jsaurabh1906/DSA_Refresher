@@ -5,6 +5,12 @@ public class SLLMain {
         LinkedList list = new LinkedList();
 
         list.insertAtStart(10);
+        list.insertAtStart(20);
+        list.insertAtEnd(30);
+        list.insertAtPosition(1, 25);
+        list.display();
+
+        list.deleteAtStart();
         list.display();
     }
 }
