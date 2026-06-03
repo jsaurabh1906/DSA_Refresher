@@ -12,5 +12,8 @@ public class SLLMain {
 
         list.deleteAtStart();
         list.display();
+
+        list.deleteAtEnd();
+        list.display();
     }
 }

@@ -64,6 +64,29 @@ public class LinkedList {
         head = head.next;
     }
 
+    public void deleteAtEnd() {
+        // If the list is empty, do nothing
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        // If the list has only one node, remove it
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+
+        // Traverse to the second last node in case of multiple nodes
+        Node current = head;
+
+        while (current.next.next != null) {
+            current = current.next;
+        }
+
+        current.next = null;
+    }
+
     public void display() {
 
         Node current = head;
