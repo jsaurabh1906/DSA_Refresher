@@ -15,5 +15,12 @@ public class SLLMain {
 
         list.deleteAtEnd();
         list.display();
+        list.insertAtStart(5);
+        list.insertAtEnd(35);
+        list.insertAtEnd(45);
+        list.display();
+
+        list.deleteAtPosition(2);
+        list.display();
     }
 }

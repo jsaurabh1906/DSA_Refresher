@@ -87,6 +87,33 @@ public class LinkedList {
         current.next = null;
     }
 
+    public void deleteAtPosition(int position) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        if (position == 0) {
+            head = head.next;
+            return;
+        }
+
+        Node current = head;
+        int currentPosition = 0;
+
+        while (current != null && currentPosition < position - 1) {
+            current = current.next;
+            currentPosition++;
+        }
+
+        if (current == null || current.next == null) {
+            System.out.println("Position out of bounds");
+            return;
+        }
+
+        current.next = current.next.next;
+    }
+
     public void display() {
 
         Node current = head;
