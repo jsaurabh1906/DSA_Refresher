@@ -114,6 +114,36 @@ public class LinkedList {
         current.next = current.next.next;
     }
 
+    // Method to delete the node with a specific value
+    public void deleteByValue(int value) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        // If the head node itself holds the value to be deleted
+        if (head.data == value) {
+            head = head.next;
+            return;
+        }
+
+        Node current = head;
+
+        while (current.next != null && current.next.data != value) {
+            current = current.next;
+        }
+
+        // If the value was not found in the list
+        if (current.next == null) {
+            System.out.println("Value not found in the list");
+            return;
+        }
+
+        // Skip the node with the value to be deleted
+        current.next = current.next.next;
+    }
+
+    // Method to display the linked list
     public void display() {
 
         Node current = head;

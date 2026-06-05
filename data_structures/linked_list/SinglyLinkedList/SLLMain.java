@@ -22,5 +22,8 @@ public class SLLMain {
 
         list.deleteAtPosition(2);
         list.display();
+
+        list.deleteByValue(45);
+        list.display();
     }
 }
