@@ -143,6 +143,21 @@ public class LinkedList {
         current.next = current.next.next;
     }
 
+    // Method to search for a value in the linked list
+    public boolean search(int value) {
+
+        Node current = head;
+
+        while (current != null) {
+            if (current.data == value) {
+                return true;
+            }
+            current = current.next;
+        }
+
+        return false;
+    }
+
     // Method to display the linked list
     public void display() {
 

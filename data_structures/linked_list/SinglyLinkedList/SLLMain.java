@@ -25,5 +25,7 @@ public class SLLMain {
 
         list.deleteByValue(45);
         list.display();
+
+        System.out.println("Value 25 found: " + list.search(25)); // true
     }
 }
