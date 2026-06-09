@@ -27,5 +27,7 @@ public class SLLMain {
         list.display();
 
         System.out.println("Value 25 found: " + list.search(25)); // true
+
+        System.out.println("Size of the list: " + list.size());
     }
 }

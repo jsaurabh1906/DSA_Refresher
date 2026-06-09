@@ -170,4 +170,17 @@ public class LinkedList {
 
         System.out.println("null");
     }
+
+    // Method to get the size of the linked list
+    public int size() {
+        int count = 0;
+        Node current = head;
+
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+
+        return count;
+    }
 }
