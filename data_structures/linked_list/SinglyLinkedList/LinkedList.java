@@ -183,4 +183,9 @@ public class LinkedList {
 
         return count;
     }
+
+    // Method to check if the linked list is empty
+    public boolean isEmpty() {
+        return head == null;
+    }
 }
